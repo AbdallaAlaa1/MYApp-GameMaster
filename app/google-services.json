@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "973049208117",
+    "project_id": "myapp-game-master",
+    "storage_bucket": "myapp-game-master.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973049208117:android:99841ad6845ed4850d807c",
+        "android_client_info": {
+          "package_name": "com.example.myapplicationgamemaster"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973049208117-8eoqvsemejk68kda1b6hb1gu7ovqrroo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUtj87JRFHzU-EwAC3ByqmRuokVFOEk3w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "973049208117-8eoqvsemejk68kda1b6hb1gu7ovqrroo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
