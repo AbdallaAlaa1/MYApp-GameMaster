@@ -1,9 +1,11 @@
 package com.example.myapplicationgamemaster;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.myapplicationgamemaster.auth.RegisterActivity2;
 
 public class Splash_Screen extends AppCompatActivity {
 
@@ -17,7 +19,7 @@ public class Splash_Screen extends AppCompatActivity {
             public void run() {
                 try {
                     sleep(3000);
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), RegisterActivity2.class);
                     startActivity(intent);
                     finish();
                 } catch (InterruptedException e) {
