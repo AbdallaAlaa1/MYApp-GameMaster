@@ -5,6 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Splash_Screen"
-    android:background="@drawable/gamemasterlogo">>
+    android:background="@drawable/gamemasterlogo">
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

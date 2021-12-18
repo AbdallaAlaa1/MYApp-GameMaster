@@ -126,18 +126,22 @@
             app:layout_constraintTop_toBottomOf="@+id/inputPassword"
             tools:ignore="MissingConstraints" />
 
-        <Button
-                android:id="@+id/alreadyhaveaccount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Already have account?"
-                android:textColor="@color/white"
-                android:background="@drawable/input_gaming"
-                android:textSize="18dp"
-                app:layout_constraintEnd_toEndOf="@+id/btnRegister"
-                app:layout_constraintStart_toStartOf="@+id/btnRegister"
-                app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
+    <TextView
+        android:id="@+id/alreadyhaveaccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Already have an account?"
+        android:paddingLeft="20dp"
+        android:paddingTop="13dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="13dp"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/btnRegister"
+        app:layout_constraintStart_toStartOf="@+id/btnRegister"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
 
         <EditText
             android:id="@+id/inputName"
