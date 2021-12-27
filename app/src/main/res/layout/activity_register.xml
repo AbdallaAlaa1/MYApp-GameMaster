@@ -34,9 +34,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="MissingConstraints" />
+            <ProgressBar
+                android:id="@+id/loginProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:layout_editor_absoluteX="181dp"
+                tools:layout_editor_absoluteY="352dp"
+                tools:ignore="MissingConstraints"
+                android:visibility="gone"/>
 
             <EditText
-                android:id="@+id/inputEmail"
+                android:id="@+id/loginEmail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -61,8 +69,8 @@
                 tools:ignore="MissingConstraints" />
 
 
-            <TextView
-                android:id="@+id/inpustPassword"
+            <EditText
+                android:id="@+id/loginPassword"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -78,9 +86,9 @@
                 android:paddingBottom="13dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
-                app:layout_constraintEnd_toEndOf="@+id/inputEmail"
-                app:layout_constraintStart_toStartOf="@+id/inputEmail"
-                app:layout_constraintTop_toBottomOf="@+id/inputEmail"
+                app:layout_constraintEnd_toEndOf="@+id/loginEmail"
+                app:layout_constraintStart_toStartOf="@+id/loginEmail"
+                app:layout_constraintTop_toBottomOf="@+id/loginEmail"
                 tools:ignore="MissingConstraints" />
 
 
@@ -92,19 +100,19 @@
                 android:text="Forgot Password"
                 android:textColor="@color/white"
                 android:textSize="20dp"
-                app:layout_constraintEnd_toEndOf="@+id/inpustPassword"
-                app:layout_constraintTop_toBottomOf="@+id/inpustPassword" />
+                app:layout_constraintEnd_toEndOf="@+id/loginPassword"
+                app:layout_constraintTop_toBottomOf="@+id/loginPassword" />
 
             <Button
-                android:id="@+id/login"
+                android:id="@+id/signIn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/input_gaming"
-                android:text="Login"
-                android:textColor="@color/white"
+                android:text="Sign IN"
+                android:textColor="#FFFFFF"
                 android:textSize="18dp"
-                app:layout_constraintEnd_toEndOf="@+id/inpustPassword"
-                app:layout_constraintStart_toStartOf="@+id/inpustPassword"
+                app:layout_constraintEnd_toEndOf="@+id/loginPassword"
+                app:layout_constraintStart_toStartOf="@+id/loginPassword"
                 app:layout_constraintTop_toBottomOf="@+id/forgotpassword" />
 
             <TextView
@@ -115,9 +123,9 @@
                 android:text="Create A New Account?"
                 android:textColor="@color/white"
                 android:textSize="18dp"
-                app:layout_constraintEnd_toEndOf="@+id/login"
-                app:layout_constraintStart_toStartOf="@+id/login"
-                app:layout_constraintTop_toBottomOf="@+id/login" />
+                app:layout_constraintEnd_toEndOf="@+id/signIn"
+                app:layout_constraintStart_toStartOf="@+id/signIn"
+                app:layout_constraintTop_toBottomOf="@+id/signIn" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -139,7 +147,7 @@
                 android:layout_marginStart="16dp"
                 android:background="@color/white"
                 app:layout_constraintBottom_toBottomOf="@+id/textView4"
-                app:layout_constraintEnd_toEndOf="@+id/inpustPassword"
+                app:layout_constraintEnd_toEndOf="@+id/loginPassword"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/textView4"
                 app:layout_constraintTop_toTopOf="@+id/textView4"
@@ -154,7 +162,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/textView4"
                 app:layout_constraintEnd_toStartOf="@+id/textView4"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/inpustPassword"
+                app:layout_constraintStart_toStartOf="@+id/loginPassword"
                 app:layout_constraintTop_toTopOf="@+id/textView4"
                 app:layout_constraintVertical_bias="0.588" />
 

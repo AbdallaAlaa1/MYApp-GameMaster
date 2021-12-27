@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.myapplicationgamemaster.MainActivity;
 import com.example.myapplicationgamemaster.R;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,7 +23,7 @@ import java.util.HashMap;
 public class RegisterActivity2 extends AppCompatActivity {
     private ProgressBar ProgressBar;
      private EditText inputName,inputEmail,inputPhone,inputPassword;
-     private Button btnRegister;
+     private Button signUp;
      private FirebaseAuth firebaseAuth ;
      private FirebaseFirestore firestore;
      public Button button;
@@ -46,8 +45,8 @@ public class RegisterActivity2 extends AppCompatActivity {
         });
 
 
-                // findView
-                inputName = findViewById(R.id.inputName);
+        // findView
+        inputName = findViewById(R.id.inputName);
         inputEmail = findViewById(R.id.inputEmail);
         inputPhone = findViewById(R.id.inputPhone);
         inputPassword = findViewById(R.id.inputPassword);
@@ -61,8 +60,8 @@ public class RegisterActivity2 extends AppCompatActivity {
         firestore = FirebaseFirestore.getInstance();
 
         // onClick
-        btnRegister = findViewById(R.id.btnRegister);
-        btnRegister.setOnClickListener(v -> {
+        signUp = findViewById(R.id.signUp);
+        signUp.setOnClickListener(v -> {
             validationData();
         });
 
@@ -92,10 +91,10 @@ public class RegisterActivity2 extends AppCompatActivity {
         }
 
         if (phone.isEmpty()){
-        Toast.makeText(RegisterActivity2.this, "Please Add your Phone",Toast.LENGTH_SHORT).show();
-        inputPhone.requestFocus();
-        return;
-    }
+            Toast.makeText(RegisterActivity2.this, "Please Add your Phone",Toast.LENGTH_SHORT).show();
+            inputPhone.requestFocus();
+            return;
+        }
         if (phone.length() < 11){
             Toast.makeText(RegisterActivity2.this, "Phone Should be 11 Character",Toast.LENGTH_SHORT).show();
             inputPhone.requestFocus();
@@ -114,11 +113,11 @@ public class RegisterActivity2 extends AppCompatActivity {
 
         }
 
-         signUp(email, password,name,phone);
+        register(email,password,name,phone);
 
     }
 
-    private void  signUp(String email, String password ,String name,String phone) {
+    private void  register(String email, String password ,String name,String phone) {
         ProgressBar.setVisibility(View.VISIBLE);
 
         firebaseAuth.createUserWithEmailAndPassword(email,password)
@@ -153,30 +152,25 @@ public class RegisterActivity2 extends AppCompatActivity {
 
         // send data
 
-         firestore.collection("users")
-                 .document()
-                 .set(map)
-                  .addOnSuccessListener(new OnSuccessListener<Void>() {
-                      @Override
-                      public void onSuccess(Void unused) {
+        firestore.collection("users")
+                .document()
+                .set(map)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
 
-                       Toast.makeText(RegisterActivity2.this,"Done",Toast.LENGTH_SHORT).show();
-                          ProgressBar.setVisibility(View.GONE);
-                          // shared p
-                          getSharedPreferences("userShared",MODE_PRIVATE)
-                                  .edit()
-                                  .putString("userName",name)
-                                  .putString("phone",phone)
-                                  .apply();
-                           startActivity(new Intent(RegisterActivity2.this, MainActivity.class));
-                           finish();
-                      }
-                  })
-                 .addOnFailureListener(e -> {
-                     ProgressBar.setVisibility(View.GONE);
-                     Toast.makeText(RegisterActivity2.this,"Error"+e.getMessage(),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity2.this,"Done",Toast.LENGTH_SHORT).show();
+                        ProgressBar.setVisibility(View.GONE);
 
-                 });
+                        startActivity(new Intent(RegisterActivity2.this, LoginActivity.class));
+                        finish();
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    ProgressBar.setVisibility(View.GONE);
+                    Toast.makeText(RegisterActivity2.this,"Error"+e.getMessage(),Toast.LENGTH_SHORT).show();
+
+                });
 
     }
 }
